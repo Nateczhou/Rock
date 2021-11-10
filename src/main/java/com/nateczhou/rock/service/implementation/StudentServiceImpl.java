@@ -25,9 +25,9 @@ public class StudentServiceImpl implements StudentService {
         return new ResponseEntity<>(dto, HttpStatus.OK);
     }
 
-    public ResponseEntity<Student> insertStudent(Student stu) {
-        Student student = studentRepository.insertStudent(stu.getS_id(),stu.getDeptName(),stu.getName(),stu.getTotalCred());
-        return new ResponseEntity<>(student, HttpStatus.OK);
+    public ResponseEntity<?> insertStudent(Student stu) {
+        studentRepository.insertStudent(stu.getS_id(),stu.getName(),stu.getDeptName(),stu.getTotalCred());
+        return new ResponseEntity<>("Heloo world", HttpStatus.OK);
     }
 
 

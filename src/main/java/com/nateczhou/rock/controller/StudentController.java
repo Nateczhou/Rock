@@ -5,6 +5,7 @@ import com.nateczhou.rock.model.StudentDTO;
 import com.nateczhou.rock.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,7 +37,7 @@ public class StudentController {
 //        return studentRepository.getStudentByName(name);
 //    }
 
-    @PostMapping("/student")
+    @PostMapping(value = "/student", consumes = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> insertStudent(@RequestBody Student s) {
         return studentService.insertStudent(s);
 

@@ -7,5 +7,5 @@ import org.springframework.http.ResponseEntity;
 public interface StudentService {
     ResponseEntity<StudentDTO> getStudentById(String id);
 
-    ResponseEntity<Student> insertStudent(Student stu);
+    ResponseEntity<?> insertStudent(Student stu);
 }
